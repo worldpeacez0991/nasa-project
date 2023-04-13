@@ -30,7 +30,7 @@ jobs:
           node-version: ${{matrix.node-version}}
       # 251 Mocking out DB
       - name: Use MongoDB from GitHub actions
-        uses:  supercharge/mongodb-github-actions@1.6.0
+        uses: supercharge/mongodb-github-action@1.9.0
         with: 
           ${{matrix.mongodb-version}}
       - run: npm install
@@ -40,3 +40,5 @@ jobs:
 
   # deploy:
   #   needs: build // synchoronous is possible
+
+  
