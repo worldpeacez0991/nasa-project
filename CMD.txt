@@ -1,4 +1,11 @@
+Login Git Hub
+Click Actions > Enable Workflow
+
 git add .github/workflows/node.yml
 git commit -m "Build pipeline workflow2"
-git log
+git status
 git push origin master
+
+Login Git Hub
+Click Actions > 
+Check if workflow is running

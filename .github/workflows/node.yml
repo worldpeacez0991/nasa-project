@@ -7,15 +7,27 @@ on:
     branches: [master]
 jobs:
   build:
+    # 249 How to quit test(npm test) watch mode in CI
+    env: 
+      CI: true
+    strategy:
+      matrix:
+        # 249 Set property
+        node-version: [14.x, 16.x]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.JS version 16
+      # get property
+      - name: Use Node.JS version ${{matrix.node-version}}
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
+          # node-version: "16"
+          # get property
+          node-version: ${{matrix.node-version}}
       - run: npm install
-      - run: npm run build --prefix client
+      - run: npm run build --prefix client\
+      - run: npm test
+
 
   # deploy:
   #   needs: build // synchoronous is possible
