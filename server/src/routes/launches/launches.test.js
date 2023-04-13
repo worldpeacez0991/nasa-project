@@ -9,6 +9,7 @@ const {
 } = require('../../models/planets.model');
 
 describe('Launches API', () => {
+  // 252
   beforeAll(async () => {
     await mongoConnect();
     await loadPlanetsData();
