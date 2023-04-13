@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     # 249 How to quit test(npm test) watch mode in CI
-    env: 
+    env:
       CI: true
       # 250
       MONGO_URL: mongodb://localhost/nasa
@@ -16,8 +16,8 @@ jobs:
       matrix:
         # 249 Set property
         node-version: [14.x, 16.x]
-        # 250 
-        mongodb-version: ['4.4']
+        # 250
+        mongodb-version: ["4.2", "4.4"]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -31,14 +31,11 @@ jobs:
       # 251 Mocking out DB
       - name: Use MongoDB from GitHub actions
         uses: supercharge/mongodb-github-action@1.9.0
-        with: 
+        with:
           mongodb-version: ${{matrix.mongodb-version}}
       - run: npm install
       - run: npm run build --prefix client\
       - run: npm test
 
-
   # deploy:
   #   needs: build // synchoronous is possible
-
-  
