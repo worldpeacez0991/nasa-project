@@ -17,7 +17,7 @@ jobs:
         # 249 Set property
         node-version: [14.x, 16.x]
         # 250 
-        mongodb-version: ['4.2', '4.4']
+        mongodb-version: ['4.4']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
