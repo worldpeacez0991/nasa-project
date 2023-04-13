@@ -31,7 +31,8 @@ jobs:
       # 251 Mocking out DB
       - name: Use MongoDB from GitHub actions
         uses:  supercharge/mongodb-github-actions@1.6.0
-        with: ${{mongodb-version}}
+        with: 
+          ${{matrix.mongodb-version}}
       - run: npm install
       - run: npm run build --prefix client\
       - run: npm test
