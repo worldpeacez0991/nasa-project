@@ -2,9 +2,10 @@ Login Git Hub
 Click Actions > Enable Workflow
 
 git add .github/workflows/node.yml
-git commit -m "Build pipeline workflow2"
-git status
+# Or git add -A   (To add all uncommitted)
+git commit -m "Build pipeline workflow3_Node14&16_DB"
 git push origin master
+
 
 Login Git Hub
 Click Actions > 
